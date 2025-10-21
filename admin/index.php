@@ -6,7 +6,7 @@ if (!isset($_SESSION['loggedin'])) {
     exit;
 }
 
-include '../includes/header.php';
+include 'includes/header.php';
 
 echo "<h1>Kelola User</h1>";
 
@@ -14,6 +14,8 @@ include '../includes/db.php';
 
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
+
+echo "<br><a href='create.php'>Tambah User</a>";
 
 if ($result->num_rows > 0) {
     echo "<table>";
@@ -26,14 +28,7 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 
-echo "<br><a href='create.php'>Tambah User</a>";
-
 $conn->close();
 
 include 'includes/footer.php';
-?>'>Tambah User</a>";
-
-$conn->close();
-
-include '../includes/footer.php';
 ?>
